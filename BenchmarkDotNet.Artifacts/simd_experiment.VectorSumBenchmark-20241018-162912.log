@@ -1,0 +1,301 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 2 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet  restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true /p:IntermediateOutputPath="/home/marco/simd-experiment/bin/Release/net8.0/a21be45a-4a8a-44b9-a5c6-ed8d098178ea/obj/Release/net8.0/" /p:OutDir="/home/marco/simd-experiment/bin/Release/net8.0/a21be45a-4a8a-44b9-a5c6-ed8d098178ea/bin/Release/net8.0/" /p:OutputPath="/home/marco/simd-experiment/bin/Release/net8.0/a21be45a-4a8a-44b9-a5c6-ed8d098178ea/bin/Release/net8.0/" in /home/marco/simd-experiment/bin/Release/net8.0/a21be45a-4a8a-44b9-a5c6-ed8d098178ea
+// command took 0.89 sec and exited with 0
+// start dotnet  build -c Release --no-restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true /p:IntermediateOutputPath="/home/marco/simd-experiment/bin/Release/net8.0/a21be45a-4a8a-44b9-a5c6-ed8d098178ea/obj/Release/net8.0/" /p:OutDir="/home/marco/simd-experiment/bin/Release/net8.0/a21be45a-4a8a-44b9-a5c6-ed8d098178ea/bin/Release/net8.0/" /p:OutputPath="/home/marco/simd-experiment/bin/Release/net8.0/a21be45a-4a8a-44b9-a5c6-ed8d098178ea/bin/Release/net8.0/" --output "/home/marco/simd-experiment/bin/Release/net8.0/a21be45a-4a8a-44b9-a5c6-ed8d098178ea/bin/Release/net8.0/" in /home/marco/simd-experiment/bin/Release/net8.0/a21be45a-4a8a-44b9-a5c6-ed8d098178ea
+// command took 3.59 sec and exited with 0
+// ***** Done, took 00:00:04 (4.52 sec)   *****
+// Found 2 benchmarks:
+//   VectorSumBenchmark.VectorSumSimdLongArraysLongNumbers: DefaultJob
+//   VectorSumBenchmark.VectorSumSimdLongArraysSmallNumbers: DefaultJob
+
+// **************************
+// Benchmark: VectorSumBenchmark.VectorSumSimdLongArraysLongNumbers: DefaultJob
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet a21be45a-4a8a-44b9-a5c6-ed8d098178ea.dll --anonymousPipes 107 108 --benchmarkName simd_experiment.VectorSumBenchmark.VectorSumSimdLongArraysLongNumbers --job Default --benchmarkId 0 in /home/marco/simd-experiment/bin/Release/net8.0/a21be45a-4a8a-44b9-a5c6-ed8d098178ea/bin/Release/net8.0
+// Failed to set up high priority (Permission denied). In order to run benchmarks with high priority, make sure you have the right permissions.
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.14.0
+// Runtime=.NET 8.0.2 (8.0.224.6711), X64 RyuJIT AVX2
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2,AES,BMI1,BMI2,FMA,LZCNT,PCLMUL,POPCNT VectorSize=256
+// Job: DefaultJob
+
+OverheadJitting  1: 1 op, 192590.00 ns, 192.5900 us/op
+WorkloadJitting  1: 1 op, 5216861.00 ns, 5.2169 ms/op
+
+OverheadJitting  2: 16 op, 152941.00 ns, 9.5588 us/op
+WorkloadJitting  2: 16 op, 65012388.00 ns, 4.0633 ms/op
+
+WorkloadPilot    1: 16 op, 35042004.00 ns, 2.1901 ms/op
+WorkloadPilot    2: 32 op, 57874748.00 ns, 1.8086 ms/op
+WorkloadPilot    3: 64 op, 101866298.00 ns, 1.5917 ms/op
+WorkloadPilot    4: 128 op, 217047051.00 ns, 1.6957 ms/op
+WorkloadPilot    5: 256 op, 413205416.00 ns, 1.6141 ms/op
+WorkloadPilot    6: 512 op, 1011082056.00 ns, 1.9748 ms/op
+
+OverheadWarmup   1: 512 op, 3010.00 ns, 5.8789 ns/op
+OverheadWarmup   2: 512 op, 1070.00 ns, 2.0898 ns/op
+OverheadWarmup   3: 512 op, 1060.00 ns, 2.0703 ns/op
+OverheadWarmup   4: 512 op, 1080.00 ns, 2.1094 ns/op
+OverheadWarmup   5: 512 op, 1090.00 ns, 2.1289 ns/op
+OverheadWarmup   6: 512 op, 1050.00 ns, 2.0508 ns/op
+OverheadWarmup   7: 512 op, 1030.00 ns, 2.0117 ns/op
+OverheadWarmup   8: 512 op, 1060.00 ns, 2.0703 ns/op
+OverheadWarmup   9: 512 op, 1070.00 ns, 2.0898 ns/op
+OverheadWarmup  10: 512 op, 1080.00 ns, 2.1094 ns/op
+
+OverheadActual   1: 512 op, 1100.00 ns, 2.1484 ns/op
+OverheadActual   2: 512 op, 1090.00 ns, 2.1289 ns/op
+OverheadActual   3: 512 op, 1110.00 ns, 2.1680 ns/op
+OverheadActual   4: 512 op, 1060.00 ns, 2.0703 ns/op
+OverheadActual   5: 512 op, 1060.00 ns, 2.0703 ns/op
+OverheadActual   6: 512 op, 1060.00 ns, 2.0703 ns/op
+OverheadActual   7: 512 op, 1050.00 ns, 2.0508 ns/op
+OverheadActual   8: 512 op, 1060.00 ns, 2.0703 ns/op
+OverheadActual   9: 512 op, 1030.00 ns, 2.0117 ns/op
+OverheadActual  10: 512 op, 1060.00 ns, 2.0703 ns/op
+OverheadActual  11: 512 op, 1060.00 ns, 2.0703 ns/op
+OverheadActual  12: 512 op, 1050.00 ns, 2.0508 ns/op
+OverheadActual  13: 512 op, 1070.00 ns, 2.0898 ns/op
+OverheadActual  14: 512 op, 1080.00 ns, 2.1094 ns/op
+OverheadActual  15: 512 op, 1070.00 ns, 2.0898 ns/op
+
+WorkloadWarmup   1: 512 op, 803805602.00 ns, 1.5699 ms/op
+WorkloadWarmup   2: 512 op, 791980240.00 ns, 1.5468 ms/op
+WorkloadWarmup   3: 512 op, 788756753.00 ns, 1.5405 ms/op
+WorkloadWarmup   4: 512 op, 784373111.00 ns, 1.5320 ms/op
+WorkloadWarmup   5: 512 op, 785623802.00 ns, 1.5344 ms/op
+WorkloadWarmup   6: 512 op, 793036599.00 ns, 1.5489 ms/op
+WorkloadWarmup   7: 512 op, 791937031.00 ns, 1.5468 ms/op
+WorkloadWarmup   8: 512 op, 806511166.00 ns, 1.5752 ms/op
+WorkloadWarmup   9: 512 op, 790463577.00 ns, 1.5439 ms/op
+
+// BeforeActualRun
+WorkloadActual   1: 512 op, 790654653.00 ns, 1.5442 ms/op
+WorkloadActual   2: 512 op, 789575136.00 ns, 1.5421 ms/op
+WorkloadActual   3: 512 op, 789444992.00 ns, 1.5419 ms/op
+WorkloadActual   4: 512 op, 790082081.00 ns, 1.5431 ms/op
+WorkloadActual   5: 512 op, 792236705.00 ns, 1.5473 ms/op
+WorkloadActual   6: 512 op, 793404656.00 ns, 1.5496 ms/op
+WorkloadActual   7: 512 op, 800304111.00 ns, 1.5631 ms/op
+WorkloadActual   8: 512 op, 793924292.00 ns, 1.5506 ms/op
+WorkloadActual   9: 512 op, 792224181.00 ns, 1.5473 ms/op
+WorkloadActual  10: 512 op, 792861840.00 ns, 1.5486 ms/op
+WorkloadActual  11: 512 op, 793994900.00 ns, 1.5508 ms/op
+WorkloadActual  12: 512 op, 802924042.00 ns, 1.5682 ms/op
+WorkloadActual  13: 512 op, 793426960.00 ns, 1.5497 ms/op
+WorkloadActual  14: 512 op, 791211109.00 ns, 1.5453 ms/op
+WorkloadActual  15: 512 op, 796541705.00 ns, 1.5557 ms/op
+
+// AfterActualRun
+WorkloadResult   1: 512 op, 790653593.00 ns, 1.5442 ms/op
+WorkloadResult   2: 512 op, 789574076.00 ns, 1.5421 ms/op
+WorkloadResult   3: 512 op, 789443932.00 ns, 1.5419 ms/op
+WorkloadResult   4: 512 op, 790081021.00 ns, 1.5431 ms/op
+WorkloadResult   5: 512 op, 792235645.00 ns, 1.5473 ms/op
+WorkloadResult   6: 512 op, 793403596.00 ns, 1.5496 ms/op
+WorkloadResult   7: 512 op, 793923232.00 ns, 1.5506 ms/op
+WorkloadResult   8: 512 op, 792223121.00 ns, 1.5473 ms/op
+WorkloadResult   9: 512 op, 792860780.00 ns, 1.5486 ms/op
+WorkloadResult  10: 512 op, 793993840.00 ns, 1.5508 ms/op
+WorkloadResult  11: 512 op, 793425900.00 ns, 1.5497 ms/op
+WorkloadResult  12: 512 op, 791210049.00 ns, 1.5453 ms/op
+WorkloadResult  13: 512 op, 796540645.00 ns, 1.5557 ms/op
+
+// AfterAll
+// Benchmark Process 19180 has exited with code 0.
+
+Mean = 1.547 ms, StdErr = 0.001 ms (0.07%), N = 13, StdDev = 0.004 ms
+Min = 1.542 ms, Q1 = 1.544 ms, Median = 1.547 ms, Q3 = 1.550 ms, Max = 1.556 ms
+IQR = 0.005 ms, LowerFence = 1.536 ms, UpperFence = 1.558 ms
+ConfidenceInterval = [1.543 ms; 1.552 ms] (CI 99.9%), Margin = 0.005 ms (0.31% of Mean)
+Skewness = 0.28, Kurtosis = 2.15, MValue = 2
+
+// ** Remained 1 (50.0%) benchmark(s) to run. Estimated finish 2024-10-18 16:30 (0h 0m from now) **
+// **************************
+// Benchmark: VectorSumBenchmark.VectorSumSimdLongArraysSmallNumbers: DefaultJob
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet a21be45a-4a8a-44b9-a5c6-ed8d098178ea.dll --anonymousPipes 107 108 --benchmarkName simd_experiment.VectorSumBenchmark.VectorSumSimdLongArraysSmallNumbers --job Default --benchmarkId 1 in /home/marco/simd-experiment/bin/Release/net8.0/a21be45a-4a8a-44b9-a5c6-ed8d098178ea/bin/Release/net8.0
+// Failed to set up high priority (Permission denied). In order to run benchmarks with high priority, make sure you have the right permissions.
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.14.0
+// Runtime=.NET 8.0.2 (8.0.224.6711), X64 RyuJIT AVX2
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX2,AES,BMI1,BMI2,FMA,LZCNT,PCLMUL,POPCNT VectorSize=256
+// Job: DefaultJob
+
+OverheadJitting  1: 1 op, 157711.00 ns, 157.7110 us/op
+WorkloadJitting  1: 1 op, 376951.00 ns, 376.9510 us/op
+
+OverheadJitting  2: 16 op, 138750.00 ns, 8.6719 us/op
+WorkloadJitting  2: 16 op, 106790.00 ns, 6.6744 us/op
+
+WorkloadPilot    1: 16 op, 2420.00 ns, 151.2500 ns/op
+WorkloadPilot    2: 32 op, 3050.00 ns, 95.3125 ns/op
+WorkloadPilot    3: 64 op, 21450.00 ns, 335.1563 ns/op
+WorkloadPilot    4: 128 op, 26240.00 ns, 205.0000 ns/op
+WorkloadPilot    5: 256 op, 35130.00 ns, 137.2266 ns/op
+WorkloadPilot    6: 512 op, 43310.00 ns, 84.5898 ns/op
+WorkloadPilot    7: 1024 op, 119900.00 ns, 117.0898 ns/op
+WorkloadPilot    8: 2048 op, 250321.00 ns, 122.2271 ns/op
+WorkloadPilot    9: 4096 op, 403091.00 ns, 98.4109 ns/op
+WorkloadPilot   10: 8192 op, 820493.00 ns, 100.1578 ns/op
+WorkloadPilot   11: 16384 op, 1519977.00 ns, 92.7720 ns/op
+WorkloadPilot   12: 32768 op, 3220613.00 ns, 98.2853 ns/op
+WorkloadPilot   13: 65536 op, 6096274.00 ns, 93.0218 ns/op
+WorkloadPilot   14: 131072 op, 12319059.00 ns, 93.9870 ns/op
+WorkloadPilot   15: 262144 op, 21571836.00 ns, 82.2900 ns/op
+WorkloadPilot   16: 524288 op, 41135913.00 ns, 78.4605 ns/op
+WorkloadPilot   17: 1048576 op, 70208789.00 ns, 66.9563 ns/op
+WorkloadPilot   18: 2097152 op, 65620531.00 ns, 31.2903 ns/op
+WorkloadPilot   19: 4194304 op, 78620493.00 ns, 18.7446 ns/op
+WorkloadPilot   20: 8388608 op, 155560829.00 ns, 18.5443 ns/op
+WorkloadPilot   21: 16777216 op, 310264305.00 ns, 18.4932 ns/op
+WorkloadPilot   22: 33554432 op, 617016244.00 ns, 18.3885 ns/op
+
+OverheadWarmup   1: 33554432 op, 53938334.00 ns, 1.6075 ns/op
+OverheadWarmup   2: 33554432 op, 53960915.00 ns, 1.6082 ns/op
+OverheadWarmup   3: 33554432 op, 53936805.00 ns, 1.6074 ns/op
+OverheadWarmup   4: 33554432 op, 58908954.00 ns, 1.7556 ns/op
+OverheadWarmup   5: 33554432 op, 38898645.00 ns, 1.1593 ns/op
+
+OverheadActual   1: 33554432 op, 38793674.00 ns, 1.1561 ns/op
+OverheadActual   2: 33554432 op, 38793584.00 ns, 1.1561 ns/op
+OverheadActual   3: 33554432 op, 38789845.00 ns, 1.1560 ns/op
+OverheadActual   4: 33554432 op, 38817845.00 ns, 1.1569 ns/op
+OverheadActual   5: 33554432 op, 38857974.00 ns, 1.1581 ns/op
+OverheadActual   6: 33554432 op, 38837834.00 ns, 1.1575 ns/op
+OverheadActual   7: 33554432 op, 38839735.00 ns, 1.1575 ns/op
+OverheadActual   8: 33554432 op, 38818294.00 ns, 1.1569 ns/op
+OverheadActual   9: 33554432 op, 38803904.00 ns, 1.1564 ns/op
+OverheadActual  10: 33554432 op, 38745874.00 ns, 1.1547 ns/op
+OverheadActual  11: 33554432 op, 38793495.00 ns, 1.1561 ns/op
+OverheadActual  12: 33554432 op, 38786094.00 ns, 1.1559 ns/op
+OverheadActual  13: 33554432 op, 38908924.00 ns, 1.1596 ns/op
+OverheadActual  14: 33554432 op, 38805464.00 ns, 1.1565 ns/op
+OverheadActual  15: 33554432 op, 38819774.00 ns, 1.1569 ns/op
+
+WorkloadWarmup   1: 33554432 op, 655517331.00 ns, 19.5359 ns/op
+WorkloadWarmup   2: 33554432 op, 635034917.00 ns, 18.9255 ns/op
+WorkloadWarmup   3: 33554432 op, 622994328.00 ns, 18.5667 ns/op
+WorkloadWarmup   4: 33554432 op, 621588770.00 ns, 18.5248 ns/op
+WorkloadWarmup   5: 33554432 op, 622499611.00 ns, 18.5519 ns/op
+WorkloadWarmup   6: 33554432 op, 625349571.00 ns, 18.6369 ns/op
+WorkloadWarmup   7: 33554432 op, 622525156.00 ns, 18.5527 ns/op
+WorkloadWarmup   8: 33554432 op, 624666223.00 ns, 18.6165 ns/op
+WorkloadWarmup   9: 33554432 op, 625262464.00 ns, 18.6343 ns/op
+WorkloadWarmup  10: 33554432 op, 623534914.00 ns, 18.5828 ns/op
+
+// BeforeActualRun
+WorkloadActual   1: 33554432 op, 624545346.00 ns, 18.6129 ns/op
+WorkloadActual   2: 33554432 op, 621728393.00 ns, 18.5290 ns/op
+WorkloadActual   3: 33554432 op, 620365155.00 ns, 18.4883 ns/op
+WorkloadActual   4: 33554432 op, 622684733.00 ns, 18.5575 ns/op
+WorkloadActual   5: 33554432 op, 621548504.00 ns, 18.5236 ns/op
+WorkloadActual   6: 33554432 op, 620729590.00 ns, 18.4992 ns/op
+WorkloadActual   7: 33554432 op, 622846216.00 ns, 18.5623 ns/op
+WorkloadActual   8: 33554432 op, 622063440.00 ns, 18.5389 ns/op
+WorkloadActual   9: 33554432 op, 621708757.00 ns, 18.5284 ns/op
+WorkloadActual  10: 33554432 op, 621586324.00 ns, 18.5247 ns/op
+WorkloadActual  11: 33554432 op, 621243481.00 ns, 18.5145 ns/op
+WorkloadActual  12: 33554432 op, 622108293.00 ns, 18.5403 ns/op
+WorkloadActual  13: 33554432 op, 625516662.00 ns, 18.6418 ns/op
+WorkloadActual  14: 33554432 op, 627403388.00 ns, 18.6981 ns/op
+WorkloadActual  15: 33554432 op, 625331729.00 ns, 18.6363 ns/op
+
+// AfterActualRun
+WorkloadResult   1: 33554432 op, 585739882.00 ns, 17.4564 ns/op
+WorkloadResult   2: 33554432 op, 582922929.00 ns, 17.3725 ns/op
+WorkloadResult   3: 33554432 op, 581559691.00 ns, 17.3318 ns/op
+WorkloadResult   4: 33554432 op, 583879269.00 ns, 17.4010 ns/op
+WorkloadResult   5: 33554432 op, 582743040.00 ns, 17.3671 ns/op
+WorkloadResult   6: 33554432 op, 581924126.00 ns, 17.3427 ns/op
+WorkloadResult   7: 33554432 op, 584040752.00 ns, 17.4058 ns/op
+WorkloadResult   8: 33554432 op, 583257976.00 ns, 17.3824 ns/op
+WorkloadResult   9: 33554432 op, 582903293.00 ns, 17.3719 ns/op
+WorkloadResult  10: 33554432 op, 582780860.00 ns, 17.3682 ns/op
+WorkloadResult  11: 33554432 op, 582438017.00 ns, 17.3580 ns/op
+WorkloadResult  12: 33554432 op, 583302829.00 ns, 17.3838 ns/op
+WorkloadResult  13: 33554432 op, 586711198.00 ns, 17.4854 ns/op
+WorkloadResult  14: 33554432 op, 586526265.00 ns, 17.4798 ns/op
+
+// AfterAll
+// Benchmark Process 19247 has exited with code 0.
+
+Mean = 17.393 ns, StdErr = 0.013 ns (0.07%), N = 14, StdDev = 0.048 ns
+Min = 17.332 ns, Q1 = 17.367 ns, Median = 17.377 ns, Q3 = 17.405 ns, Max = 17.485 ns
+IQR = 0.037 ns, LowerFence = 17.312 ns, UpperFence = 17.460 ns
+ConfidenceInterval = [17.339 ns; 17.448 ns] (CI 99.9%), Margin = 0.054 ns (0.31% of Mean)
+Skewness = 0.78, Kurtosis = 2.22, MValue = 2
+
+// ** Remained 0 (0.0%) benchmark(s) to run. Estimated finish 2024-10-18 16:29 (0h 0m from now) **
+// ***** BenchmarkRunner: Finish  *****
+
+// * Export *
+  BenchmarkDotNet.Artifacts/results/simd_experiment.VectorSumBenchmark-report.csv
+  BenchmarkDotNet.Artifacts/results/simd_experiment.VectorSumBenchmark-report-github.md
+  BenchmarkDotNet.Artifacts/results/simd_experiment.VectorSumBenchmark-report.html
+
+// * Detailed results *
+VectorSumBenchmark.VectorSumSimdLongArraysLongNumbers: DefaultJob
+Runtime = .NET 8.0.2 (8.0.224.6711), X64 RyuJIT AVX2; GC = Concurrent Workstation
+Mean = 1.547 ms, StdErr = 0.001 ms (0.07%), N = 13, StdDev = 0.004 ms
+Min = 1.542 ms, Q1 = 1.544 ms, Median = 1.547 ms, Q3 = 1.550 ms, Max = 1.556 ms
+IQR = 0.005 ms, LowerFence = 1.536 ms, UpperFence = 1.558 ms
+ConfidenceInterval = [1.543 ms; 1.552 ms] (CI 99.9%), Margin = 0.005 ms (0.31% of Mean)
+Skewness = 0.28, Kurtosis = 2.15, MValue = 2
+-------------------- Histogram --------------------
+[1.540 ms ; 1.558 ms) | @@@@@@@@@@@@@
+---------------------------------------------------
+
+VectorSumBenchmark.VectorSumSimdLongArraysSmallNumbers: DefaultJob
+Runtime = .NET 8.0.2 (8.0.224.6711), X64 RyuJIT AVX2; GC = Concurrent Workstation
+Mean = 17.393 ns, StdErr = 0.013 ns (0.07%), N = 14, StdDev = 0.048 ns
+Min = 17.332 ns, Q1 = 17.367 ns, Median = 17.377 ns, Q3 = 17.405 ns, Max = 17.485 ns
+IQR = 0.037 ns, LowerFence = 17.312 ns, UpperFence = 17.460 ns
+ConfidenceInterval = [17.339 ns; 17.448 ns] (CI 99.9%), Margin = 0.054 ns (0.31% of Mean)
+Skewness = 0.78, Kurtosis = 2.22, MValue = 2
+-------------------- Histogram --------------------
+[17.306 ns ; 17.512 ns) | @@@@@@@@@@@@@@
+---------------------------------------------------
+
+// * Summary *
+
+BenchmarkDotNet v0.14.0, Ubuntu 22.04.5 LTS (Jammy Jellyfish)
+AMD Ryzen 7 5700G with Radeon Graphics, 1 CPU, 16 logical and 8 physical cores
+.NET SDK 8.0.201
+  [Host]     : .NET 8.0.2 (8.0.224.6711), X64 RyuJIT AVX2
+  DefaultJob : .NET 8.0.2 (8.0.224.6711), X64 RyuJIT AVX2
+
+
+| Method                              | Mean            | Error        | StdDev       |
+|------------------------------------ |----------------:|-------------:|-------------:|
+| VectorSumSimdLongArraysLongNumbers  | 1,547,411.27 ns | 4,807.610 ns | 4,014.572 ns |
+| VectorSumSimdLongArraysSmallNumbers |        17.39 ns |     0.054 ns |     0.048 ns |
+
+// * Hints *
+Outliers
+  VectorSumBenchmark.VectorSumSimdLongArraysLongNumbers: Default  -> 2 outliers were removed (1.56 ms, 1.57 ms)
+  VectorSumBenchmark.VectorSumSimdLongArraysSmallNumbers: Default -> 1 outlier  was  removed (18.70 ns)
+
+// * Legends *
+  Mean   : Arithmetic mean of all measurements
+  Error  : Half of 99.9% confidence interval
+  StdDev : Standard deviation of all measurements
+  1 ns   : 1 Nanosecond (0.000000001 sec)
+
+// ***** BenchmarkRunner: End *****
+Run time: 00:00:39 (39.36 sec), executed benchmarks: 2
+
+Global total time: 00:00:43 (43.96 sec), executed benchmarks: 2
+// * Artifacts cleanup *
+Artifacts cleanup is finished
